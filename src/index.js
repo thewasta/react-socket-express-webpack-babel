@@ -1,12 +1,39 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './style.scss';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class Index extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            clicked: false
+        };
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    }
+
+    componentDidMount() {
+        this.socket = io('http://localhost:4000');
+    }
+
+    setClass = () => {
+        return {
+            color: this.state.clicked ? 'gray' : 'red'
+        };
+    };
+    onChange = () => {
+
+        console.log('click', this.state.clicked);
+        this.setState({clicked: !this.state.clicked});
+    };
+
+    render() {
+        return (
+            <div>
+                <h1 style={this.setClass()}>Hola</h1>
+                <input onChange={this.onChange} type="checkbox"/>
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(<Index/>, document.getElementById('app'));
