@@ -1,0 +1,151 @@
+body {
+  font-family: "Be Vietnam", sans-serif;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.left-panel {
+  position: relative;
+  width: 225px;
+  background: #35536D;
+  height: 100vh;
+}
+
+.profile-panel {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 80px;
+  border-bottom: 1px solid #a3a3a3;
+}
+
+.user-profile {
+  position: relative;
+  padding: 8px;
+}
+
+.user-profile img {
+  width: 50px;
+}
+
+.user-profile img:hover {
+  cursor: pointer;
+}
+
+.user-status.active {
+  display: block;
+}
+
+.user-status {
+  display: none;
+  border-radius: 3px;
+  width: 180px;
+  color: #3d3d3d;
+  background: #fff;
+  position: absolute;
+  left: 0;
+}
+
+.user-status .status-item {
+  transition: 0.5s background-color ease-out;
+  padding: 3px 8px;
+}
+
+.user-status .status-item:hover {
+  cursor: pointer;
+  background-color: rgba(206, 206, 206, 0.4);
+}
+
+.user-status .menu-status .status-helper {
+  font-size: 0.7em;
+  font-weight: lighter;
+}
+
+.divider-vertical {
+  width: 100%;
+  border-bottom: 1px solid #cecece;
+}
+
+.user-status .status-text .status-helper {
+  text-align: center;
+  padding: 3px;
+  margin-top: 5px;
+  font-size: 0.6em;
+  font-weight: lighter;
+}
+
+.status-text i {
+  margin: 0 5px;
+}
+
+.yellow {
+  color: #ffe261;
+}
+
+.brown {
+  color: #9a7425;
+}
+
+.green {
+  color: #56D57D;
+}
+
+.search-input {
+  overflow: hidden;
+  position: relative;
+  height: 45px;
+}
+
+.search-input input {
+  outline: none;
+  width: 100%;
+  height: 100%;
+  color: #000;
+  padding-top: 10px;
+  background: transparent;
+  border: none;
+}
+
+.search-input label {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  left: 0;
+}
+
+.search-input label:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: -1px;
+  border-bottom: 2px solid #4385a4;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+
+span {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.search-input input:focus + .label-name .content-name,
+.search-input input:valid + .label-name .content-name {
+  transform: translateY(-20px);
+  font-size: 15px;
+  color: #cecece;
+}
+
+.search-input input:focus + .label-name:after,
+.search-input input:valid + .label-name:after {
+  transform: translateX(0%);
+}
+
+/*# sourceMappingURL=style.css.map */
